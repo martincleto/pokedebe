@@ -12,7 +12,7 @@ const env = process.env.NODE_ENV || 'development'
 let baseConfig = {
   context: paths.src,
   entry: {
-    app: './app.js',
+    app: './index.js',
   },
   output: {
     filename: '[name].bundle.js?[hash]',
