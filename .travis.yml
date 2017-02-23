@@ -6,7 +6,7 @@ node_js:
   - "6"
 
 script:
-  - yarn test
+  - yarn test -- -u
   - yarn run build
 
 branches:
@@ -14,6 +14,6 @@ branches:
   - master
 
 cache:
-  yarn: true
+  yarn: false
   directories:
     - node_modules
