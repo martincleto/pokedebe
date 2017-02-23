@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 
-// require('../stylesheets/header.scss')
+import styles from 'stylesheets/header.scss'  // eslint-disable-line no-unused-vars
 
 class Header extends Component {
   constructor(props) {

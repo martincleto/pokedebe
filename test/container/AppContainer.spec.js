@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from 'Components/Header'
+import AppContainer from 'Containers/AppContainer'
 
-describe('Header', function() {
+describe('AppContainer', function() {
   test('should render without error', () => {
     const component = renderer.create(
-      <Header/>
+      <AppContainer/>
     ).toJSON();
 
     expect(component).toMatchSnapshot();

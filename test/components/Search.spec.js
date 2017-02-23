@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from 'Components/Header'
+import Search from 'Components/Search'
 
-describe('Header', function() {
+describe('Search', function() {
   test('should render without error', () => {
     const component = renderer.create(
-      <Header/>
+      <Search/>
     ).toJSON();
 
     expect(component).toMatchSnapshot();

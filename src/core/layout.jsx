@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from 'Components/Header'
+import Footer from 'Components/Footer'
 
 function layout(Component) {
   return function(props) {
     return (
       <div className="container">
         <Header />
-        <Component {...props} />
+        <Component {...props}/>
         <Footer />
       </div>
     )

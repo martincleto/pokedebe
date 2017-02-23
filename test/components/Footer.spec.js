@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from 'Components/Header'
+import Footer from 'Components/Footer'
 
-describe('Header', function() {
+describe('Footer', function() {
   test('should render without error', () => {
     const component = renderer.create(
-      <Header/>
+      <Footer/>
     ).toJSON();
 
     expect(component).toMatchSnapshot();

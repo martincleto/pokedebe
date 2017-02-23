@@ -11,7 +11,10 @@ class Search extends Component {
 
   render() {
     return (
-      <p>Search</p>
+      <form className="search-form">
+        <input type="text" id="q" className="search-form__field" placeholder="Enter a Pokemon name, e.g. Bulbasaur"/>
+        <button id="btn-search" className="search-form__button" onClick="">Search!</button>
+      </form>
     )
   }
 }
