@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 require('stylesheets/header.scss')
 
 class Header extends Component {
-
   constructor(props) {
     super(props)
   }
