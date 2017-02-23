@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import App from '../core/App'
 
+require('../stylesheets/app.scss')
+
 class AppContainer extends Component {
   constructor() {
     super()
@@ -12,7 +14,7 @@ class AppContainer extends Component {
     this.data = null
   }
 
-  getData(query) {
+  getData(query) {  // eslint-disable-line no-unused-vars
     this.data = {
       someKey: 'someValue'
     }

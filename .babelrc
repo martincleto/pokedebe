@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "transform-runtime"
+  ],
+  "presets": [
+    ["latest", {
+        "es2015": {
+          "modules": false
+        }
+    }],
+    "react"
+  ],
+  "env": {
+    "test": {
+      "presets": ["latest", "react"]
+    }
+  }
+}

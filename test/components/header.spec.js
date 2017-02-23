@@ -1,16 +1,21 @@
-import Utils from 'react-addons-test-utils'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import Header from '../../src/components/Header'
+
+let result
 
 describe('Header', function() {
 
-  it('can render without error', function() {
-    // const renderer = ReactTestUtils.createRenderer();
-    // renderer.render(<MyComponent />);
-    // const result = renderer.getRenderOutput();
-    //
-    // expect(result.type).toBe('Hea');
-    // expect(result.props.children).toEqual([
-    //   <span className="heading">Title</span>,
-    //   <Subcomponent foo="bar" />
-    // ]);
+  beforeAll(() => {
+    renderer.render(<Header />)
+    result = renderer.getRenderOutput()
+  })
+
+  test('should render without error', () => {
+    expect(result.type).toBe('Header')
+    expect(result.props.children).toEqual([
+      <h1 class="heading heading--level-1">Pokédebe</h1>
+    ]);
   });
 })

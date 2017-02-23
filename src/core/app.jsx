@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+import { Router, Route, hashHistory, browserHistory } from 'react-router'  // eslint-disable-line no-unused-vars
 
 import Search from '../components/Search'
 import Detail from '../components/Detail'
@@ -22,7 +22,7 @@ class App extends Component {
 
     componentsList.forEach(Component => {
       this.decoratedComponents[Component.name] = layout(Component)
-      this.decoratedComponents[Component.name].displayName = `Decorated${Component.name}`  // just for more friendly debugging, no functionality case here
+      //this.decoratedComponents[Component.name].displayName = `Decorated${Component.name}`  // just for more friendly debugging, no functionality case here
     })
   }
 

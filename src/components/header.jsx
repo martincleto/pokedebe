@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 
-require('stylesheets/header.scss')
+// require('../stylesheets/header.scss')
 
 class Header extends Component {
   constructor(props) {
