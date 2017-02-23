@@ -1,8 +1,7 @@
 {
-  "transform": {".*": "<rootDir>/scripts/jest-preprocessor.js"},
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
-    "\\.(css|scss)$": "identity-obj-proxy",
+    "\\.(css|scss)$": "<rootDir>/scripts/jest-preprocessor.js",
     "app": "<rootDir>/src/core/app.jsx",
     "layout": "<rootDir>/src/core/layout.jsx",
     "Containers/AppContainer": "<rootDir>/src/containers/AppContainer.jsx",

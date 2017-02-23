@@ -56,7 +56,7 @@ let baseConfig = {
       Components: path.join(paths.src, 'components'),
       Containers: path.join(paths.src, 'containers'),
       Core: path.join(paths.src, 'core'),
-      stylesheets: path.join(paths.src, 'stylesheets')
+      Stylesheets: path.join(paths.src, 'stylesheets')
     },
     extensions: [
       '.js',

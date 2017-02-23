@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import App from 'Core/App'
-import styles from 'stylesheets/app.scss' // eslint-disable-line no-unused-vars
+import styles from 'Stylesheets/app.scss' // eslint-disable-line no-unused-vars
 
 class AppContainer extends Component {
   constructor() {
