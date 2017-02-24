@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import App from '../core/App'
+import App from '../core/app'
 
 import styles from '../stylesheets/app.scss'  // eslint-disable-line no-unused-vars
 
