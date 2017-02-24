@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Footer from 'Components/Footer'
+import Footer from '../../src/components/Footer'
 
 describe('Footer', function() {
   test('should render without error', () => {

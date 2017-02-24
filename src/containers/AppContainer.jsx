@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import App from 'Core/App'
-import styles from 'Stylesheets/app.scss' // eslint-disable-line no-unused-vars
+import App from '../core/App'
+
+import styles from '../stylesheets/app.scss'  // eslint-disable-line no-unused-vars
 
 class AppContainer extends Component {
   constructor() {
@@ -10,7 +11,7 @@ class AppContainer extends Component {
       active: false,
     }
 
-    this.data = {}
+    this.data = null
   }
 
   getData(query) {  // eslint-disable-line no-unused-vars

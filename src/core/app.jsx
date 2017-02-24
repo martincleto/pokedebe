@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Router, Route, hashHistory, browserHistory } from 'react-router'  // eslint-disable-line no-unused-vars
 
-import Search from 'Components/Search'
-import Detail from 'Components/Detail'
-import layout from 'Core/layout'
+import Search from '../components/Search'
+import Detail from '../components/Detail'
+import layout from '../core/layout'
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
   setDecoratedComponents() {
     this.decoratedComponents = {}
 
-    let componentsList = [ // @TODO find a non-hardcoding way to fetch the components list
+    let componentsList = [
       Search,
       Detail
     ]

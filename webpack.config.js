@@ -51,13 +51,6 @@ let baseConfig = {
     })
   ],
   resolve: {
-    alias: {
-      AppContainer: path.join(paths.src, 'containers/AppContainer.jsx'),
-      Components: path.join(paths.src, 'components'),
-      Containers: path.join(paths.src, 'containers'),
-      Core: path.join(paths.src, 'core'),
-      Stylesheets: path.join(paths.src, 'stylesheets')
-    },
     extensions: [
       '.js',
       '.jsx'

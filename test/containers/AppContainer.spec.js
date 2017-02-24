@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import AppContainer from 'Containers/AppContainer'
+import AppContainer from '../../src/containers/AppContainer'
 
 describe('AppContainer', function() {
   test('should render without error', () => {

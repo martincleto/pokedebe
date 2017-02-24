@@ -11,7 +11,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <p>Made with <span>love</span> by <a href="http://github.com/martincleto" title="martincleto at GitHub">martincleto</a> to Ainara & Enric</p>
+        <p>Made with <span>love</span> by <a href="http://github.com/martincleto" title="martincleto at GitHub">martincleto</a> to Enric</p>
       </footer>
     )
   }

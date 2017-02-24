@@ -11,23 +11,9 @@ exports[`AppContainer should render without error 1`] = `
       Pokédebe
     </h1>
   </header>
-  <form
-    className="search-form"
-  >
-    <input
-      className="search-form__field"
-      id="q"
-      placeholder="Enter a Pokemon name, e.g. Bulbasaur"
-      type="text"
-    />
-    <button
-      className="search-form__button"
-      id="btn-search"
-      onClick=""
-    >
-      Search!
-    </button>
-  </form>
+  <p>
+    Search
+  </p>
   <footer
     className="footer"
   >
@@ -43,7 +29,7 @@ exports[`AppContainer should render without error 1`] = `
       >
         martincleto
       </a>
-       to Ainara & Enric
+       to Enric
     </p>
   </footer>
 </div>

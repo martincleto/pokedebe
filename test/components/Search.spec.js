@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Search from 'Components/Search'
+import Search from '../../src/components/Search'
 
 describe('Search', function() {
   test('should render without error', () => {
