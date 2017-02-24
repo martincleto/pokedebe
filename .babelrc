@@ -12,7 +12,8 @@
   ],
   "env": {
     "test": {
-      "presets": ["latest", "react"]
+      "presets": ["latest", "react"],
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
 }
