@@ -1,50 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppContainer should render without error 1`] = `
-<div
-  className="container"
+<form
+  className="search-form"
 >
-  <header>
-    <h1
-      className="heading heading--level-1"
-    >
-      Pokédebe
-    </h1>
-  </header>
-  <form
-    className="search-form"
+  <input
+    className="search-form__field"
+    id="q"
+    placeholder="Enter a Pokemon name, e.g. Bulbasaur"
+    type="text"
+  />
+  <button
+    className="search-form__button"
+    id="btn-search"
+    onClick=""
   >
-    <input
-      className="search-form__field"
-      id="q"
-      placeholder="Enter a Pokemon name, e.g. Bulbasaur"
-      type="text"
-    />
-    <button
-      className="search-form__button"
-      id="btn-search"
-      onClick=""
-    >
-      Search!
-    </button>
-  </form>
-  <footer
-    className="footer"
-  >
-    <p>
-      Made with 
-      <span>
-        love
-      </span>
-       by 
-      <a
-        href="http://github.com/martincleto"
-        title="martincleto at GitHub"
-      >
-        martincleto
-      </a>
-       to Enric
-    </p>
-  </footer>
-</div>
+    Search!
+  </button>
+</form>
 `;
