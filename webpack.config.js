@@ -13,6 +13,9 @@ let baseConfig = {
   context: paths.src,
   entry: {
     app: './index.js',
+    vendor: [
+      'babel-polyfill'
+    ]
   },
   output: {
     filename: '[name].bundle.js?[hash]',
@@ -27,7 +30,25 @@ let baseConfig = {
          exclude: [
            /node_modules/,
            path.join(paths.src, '/**/*.spec.js')
-         ]
+         ],
+        //  options: {
+        //    plugins: ['transform-runtime'],
+        //    presets: [
+        //      ['es2015', {
+        //        modules: false
+        //      }],
+        //      'react'
+        //    ],
+        //    env: {
+        //      test: {
+        //        plugins: ['transform-es2015-modules-commonjs'],
+        //        presets: [
+        //          'es2015',
+        //          'react'
+        //        ],
+        //      }
+        //    }
+        //  }
       },
       {
        test: /\.scss$/,

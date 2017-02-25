@@ -3,6 +3,7 @@
 .DS_Store
 *.css.map
 npm-debug.log
+yarn-error.log
 
 # Folders
 
