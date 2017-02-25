@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render without error 1`] = `
+<footer
+  className="footer"
+>
+  <p>
+    Made with 
+    <span>
+      love
+    </span>
+     by 
+    <a
+      href="http://github.com/martincleto"
+      title="martincleto at GitHub"
+    >
+      martincleto
+    </a>
+     to Enric
+  </p>
+</footer>
+`;

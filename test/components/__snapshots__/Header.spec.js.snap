@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render without error 1`] = `
+<header>
+  <h1
+    className="heading heading--level-1"
+  >
+    Pokédebe
+  </h1>
+</header>
+`;

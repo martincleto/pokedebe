@@ -1,0 +1,13 @@
+# Files
+
+.DS_Store
+*.css.map
+npm-debug.log
+yarn-error.log
+
+# Folders
+
+build/
+cache/
+coverage/
+node_modules/
