@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Router, Route, hashHistory, browserHistory } from 'react-router'  // eslint-disable-line no-unused-vars
 
-import Search from '../components/Search'
-import Detail from '../components/Detail'
-import layout from '../core/layout'
+import Search from 'Components/Search'
+import Detail from 'Components/Detail'
+import layout from 'Core/layout'
 
 class App extends Component {
   constructor(props) {

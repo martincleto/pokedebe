@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Detail from '../../src/components/Detail'
+import Detail from 'Components/Detail'
 
 describe('Detail', function() {
   test('should render without error', () => {
