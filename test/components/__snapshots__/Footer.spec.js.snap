@@ -5,18 +5,14 @@ exports[`Footer should render without error 1`] = `
   className="footer"
 >
   <p>
-    Made with 
-    <span>
-      love
-    </span>
-     by 
+    Made with love by 
     <a
       href="http://github.com/martincleto"
       title="martincleto at GitHub"
     >
       martincleto
     </a>
-     to Enric
+     to Ainara & Enric
   </p>
 </footer>
 `;
