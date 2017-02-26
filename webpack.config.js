@@ -51,6 +51,10 @@ let baseConfig = {
         //  }
       },
       {
+        test: /\.json$/,
+        use: 'json-loader'
+      },
+      {
        test: /\.scss$/,
        loader: ExtractTextPlugin.extract(`css-loader?sourceMap!postcss-loader!sass-loader?sourceMap&includePaths=${paths.assets}`)
       },
@@ -59,6 +63,11 @@ let baseConfig = {
        loader: 'css-loader'
       }
     ]
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   },
   plugins: [
     new ExtractTextPlugin({
@@ -73,14 +82,14 @@ let baseConfig = {
   ],
   resolve: {
     alias: {
-      AppContainer: path.join(paths.src, 'containers/AppContainer.jsx'),
       Components: path.join(paths.src, 'components'),
+      Config: path.join(paths.src, 'config'),
       Containers: path.join(paths.src, 'containers'),
-      Core: path.join(paths.src, 'core'),
       Stylesheets: path.join(paths.src, 'stylesheets')
     },
     extensions: [
       '.js',
+      '.json',
       '.jsx'
     ],
     modules: [

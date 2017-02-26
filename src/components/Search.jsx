@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 //require('stylesheets/search.scss')
 
+
 class Search extends Component {
 
   constructor(props) {
@@ -11,12 +12,21 @@ class Search extends Component {
 
   render() {
     return (
-      <form className="search-form">
-        <input type="text" id="q" className="search-form__field" placeholder="Enter a Pokemon name, e.g. Bulbasaur"/>
-        <button id="btn-search" className="search-form__button" onClick="">Search!</button>
+      <form className="search__form">
+        <input type="text" id="q" className="search__form-field" placeholder="Enter a Pokemon name, e.g. Bulbasaur"/>
+        <button id="b" className="search__form-button" onClick="">Search!</button>
       </form>
     )
   }
+
+  componentDidMount() {
+    // console.info('[Search] Search mounted')
+    // console.log('[Search] data,', this.props.data)
+  }
+}
+
+Search.propTypes = {
+  data: React.PropTypes.array
 }
 
 export default Search

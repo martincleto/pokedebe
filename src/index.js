@@ -1,7 +1,18 @@
-'use sctrict'
 
 import React from 'react'
-import { render } from 'react-dom'
-import AppContainer from 'Containers/AppContainer'
+import {render} from 'react-dom'
+import {Router, Route, hashHistory} from 'react-router'
 
-render(<AppContainer />, document.getElementById('app'))
+import App from 'Containers/App'
+import Detail from 'Components/Detail'
+import Search from 'Components/Search'
+
+render(
+    <Router history={hashHistory}>
+      <Route component={App}>
+        <Route path='/' component={Search}/>
+        <Route path='/detail/:name' component={Detail} />
+      </Route>
+    </Router>,
+    document.getElementById('app')
+)

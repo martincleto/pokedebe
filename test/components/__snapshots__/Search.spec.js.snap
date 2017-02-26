@@ -2,17 +2,17 @@
 
 exports[`Search should render without error 1`] = `
 <form
-  className="search-form"
+  className="search__form"
 >
   <input
-    className="search-form__field"
+    className="search__form-field"
     id="q"
     placeholder="Enter a Pokemon name, e.g. Bulbasaur"
     type="text"
   />
   <button
-    className="search-form__button"
-    id="btn-search"
+    className="search__form-button"
+    id="b"
     onClick=""
   >
     Search!
