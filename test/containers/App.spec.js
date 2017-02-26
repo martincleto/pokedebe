@@ -1,4 +1,3 @@
-jest.unmock('Containers/App')
 
 import React from 'react'
 import ReactTestUtils from 'react-addons-test-utils'

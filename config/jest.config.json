@@ -17,7 +17,7 @@
     "Components/Search": "<rootDir>/src/components/Search.jsx",
     "Containers/App": "<rootDir>/src/containers/App.jsx",
     "Core/app": "<rootDir>/src/components/Search.jsx",
-    "Core/config/api": "<rootDir>/src/core/config/api.json"
+    "Config/api": "<rootDir>/src/config/api.json"
   },
   "setupFiles": ["<rootDir>/test/__mocks__/browserMocks.js"],
   "transform": {
