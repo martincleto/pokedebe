@@ -1,10 +1,17 @@
+@import 'partials/vars';
+@import 'partials/placeholders';
 
 .heading {
-  font-family: 'Pokemon', serif;
+  @extend %heading;
+
   padding: 0;
   margin: 1rem;
 
   &--level-1 {
+    color: $color-yellow;
+    font-family: 'Pokemon', serif;
     font-size: 4rem;
+    letter-spacing: .2rem;
+    text-shadow: 3px 2px $color-red;
   }
 }

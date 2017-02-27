@@ -1,4 +1,41 @@
+@import 'vendor/breakpoint';
+@import 'partials/vars';
+@import 'partials/placeholders';
 
 .search {
-  
+  width: 100%;
+
+  @include breakpoint($bp-medium-portrait) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.react-autosuggest {
+  &__container {
+    position: relative;
+  }
+
+  &__suggestions-container {
+    display: none;
+
+    &--open {
+      position: absolute;
+      top: 34px;
+      display: block;
+      width: 100%;
+      background-color: lighten($color-blue-light, 20%);
+      padding: 1rem;
+    }
+  }
+
+  &__suggestions-list {
+    @extend %reset-list;
+
+    color: $color-blue-dark;
+
+    li {
+      border-bottom: solid 1px lighten($color-blue-dark, 50%);
+    }
+  }
 }

@@ -6,10 +6,10 @@
 }
 
 %button {
-  background-color: $accent-color;
-  color: $tertiary-color;
+  background-color: $color-accent;
+  color: $color-tertiary;
   font-family: $base-font-stack;
-  text-shadow: 1px 1px 0 darken($accent-color, 15%);
+  text-shadow: 1px 1px 0 darken($color-accent, 15%);
   line-height: $large-line-height;
   padding: 0 1.6rem;
   border-radius: $default-border-radius;
@@ -22,7 +22,7 @@
   &:active,
   &:hover,
   &:focus {
-    background-color: darken($accent-color, 14%);
+    background-color: darken($color-accent, 14%);
   }
 
   &[disabled] {
@@ -31,12 +31,10 @@
   }
 }
 
-%button-icon {
-  background-color: transparent;
+%reset-list {
+  list-style: none;
   padding: 0;
   margin: 0;
-  border: 0;
-  box-shadow: none;
 }
 
 %field {
@@ -46,17 +44,17 @@
   text-align: left;
   padding: 0 .5rem;
   border-radius: $default-border-radius;
-  border: solid 1px $secondary-color;
+  border: solid 1px $color-secondary;
   outline: none;
   margin: 0 0 2rem;
 
   &::placeholder {
-    color: $secondary-color;
+    color: $color-secondary;
   }
 }
 
 %heading {
-  color: $primary-color;
+  color: $color-primary;
   font-family: $heading-font-stack;
   font-size: $large-font-size;
   line-height: $default-line-height;
@@ -65,13 +63,13 @@
 }
 
 %link {
-  color: $accent-color;
+  color: $color-accent;
   outline: none;
   transition: color .5s ease-out;
 
   &:active,
   &:hover,s
   &:focus {
-    color: darken($accent-color, 40%);
+    color: darken($color-accent, 40%);
   }
 }
