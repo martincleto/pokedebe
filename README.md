@@ -17,9 +17,9 @@ or alternatively `$ git clone https://github.com/martincleto/pokedebe.git`
 
 ## Usage
 
-* `$ yarn start` creates a development build and starts a web server at <http://localhost:8080/>
+* `$ yarn run dev` creates a development build and starts a web server at <http://localhost:8080/>
 * `$ yarn run build` generates a production build
-* `$ yarn run serve` starts a basic node server with the actual build files for production at <http://localhost:3000/>
+* `$ yarn run serve` starts a basic node server at <http://localhost:3000/> with the actual production build
 
 ## TODO List
 

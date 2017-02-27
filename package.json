@@ -21,8 +21,8 @@
     "prebuild": "yarn run clean",
     "prestart": "yarn run clean",
     "pretest": "yarn run clean & yarn run lint",
-    "serve": "yarn run build && node server/server.js",
-    "start": "webpack-dev-server",
+    "start": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js -p && node server/server.js",
+    "dev": "webpack-dev-server",
     "test": "jest --config config/jest.config.json"
   },
   "dependencies": {
