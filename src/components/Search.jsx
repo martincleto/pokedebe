@@ -1,32 +1,93 @@
 
 import React, { Component } from 'react'
+import Autosuggest from 'react-autosuggest'
+import {hashHistory} from 'react-router'
 
 //require('stylesheets/search.scss')
-
 
 class Search extends Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      value: '',
+      suggestions: []
+    }
   }
 
-  render() {
-    return (
-      <form className="search__form">
-        <input type="text" id="q" className="search__form-field" placeholder="Enter a Pokemon name, e.g. Bulbasaur"/>
-        <button id="b" className="search__form-button" onClick="">Search!</button>
-      </form>
+  getSuggestions(value) {
+    const inputValue = value.trim().toLowerCase()
+    const inputLength = inputValue.length
+    const data = Object.values(this.props.data)
+
+    return inputLength === 0 ? [] : data.filter(item =>
+      item.name.toLowerCase().slice(0, inputLength) === inputValue
     )
   }
 
-  componentDidMount() {
-    // console.info('[Search] Search mounted')
-    // console.log('[Search] data,', this.props.data)
+  getSuggestionValue(suggestion) {
+    return suggestion.name
+  }
+
+  renderSuggestion(suggestion) {
+    return (
+      <div>{suggestion.name}</div>
+    )
+  }
+
+  onChange(event, { newValue }) {
+    this.setState({
+      value: newValue
+    })
+  }
+
+  onSearch(event) {
+    event.preventDefault()
+
+    hashHistory.push(`/detail/${this.state.value}`)
+  }
+
+  onSuggestionsFetchRequested({ value }) {
+    let suggestions = this.getSuggestions(value)
+
+    this.setState({
+      suggestions: suggestions
+    })
+  }
+
+  onSuggestionsClearRequested() {
+    this.setState({
+      suggestions: []
+    })
+  }
+
+  render() {
+    const { value, suggestions } = this.state
+    const inputProps = {
+      placeholder: 'Enter a Pokemon name e.g. Bulbasaur',
+      value,
+      onChange: this.onChange.bind(this)
+    }
+
+    return (
+      <form className="search-form">
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
+          getSuggestionValue={this.getSuggestionValue}
+          renderSuggestion={this.renderSuggestion}
+          inputProps={inputProps}
+        />
+      <button id="btn-search" className="search-form__button" onClick={this.onSearch.bind(this)}>Search!</button>
+      </form>
+    )
   }
 }
 
 Search.propTypes = {
-  data: React.PropTypes.array
+  data: React.PropTypes.object
 }
 
 export default Search

@@ -2,18 +2,37 @@
 
 exports[`Search should render without error 1`] = `
 <form
-  className="search__form"
+  className="search-form"
 >
-  <input
-    className="search__form-field"
-    id="q"
-    placeholder="Enter a Pokemon name, e.g. Bulbasaur"
-    type="text"
-  />
+  <div
+    className="react-autosuggest__container"
+  >
+    <input
+      aria-activedescendant={null}
+      aria-autocomplete="list"
+      aria-expanded={false}
+      aria-haspopup={false}
+      aria-owns="react-autowhatever-1"
+      autoComplete="off"
+      className="react-autosuggest__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Enter a Pokemon name e.g. Bulbasaur"
+      role="combobox"
+      type="text"
+      value=""
+    />
+    <div
+      className="react-autosuggest__suggestions-container"
+      id="react-autowhatever-1"
+    />
+  </div>
   <button
-    className="search__form-button"
-    id="b"
-    onClick=""
+    className="search-form__button"
+    id="btn-search"
+    onClick={[Function]}
   >
     Search!
   </button>
