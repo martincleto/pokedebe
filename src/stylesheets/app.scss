@@ -1,16 +1,8 @@
-
-$color-primary: #333;
-$color-lightest: #FFF;
-
-// sass-lint:disable indentation
-@font-face {
-  font-family: 'Pokemon';
-  src: url('/fonts/pokemon-solid-webfont.woff2') format('woff2'),
-       url('/fonts/pokemon-solid-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-// sass-lint:enable indentation
+@import 'vendor/normalize';
+@import 'partials/vars';
+@import 'partials/mixins';
+@import 'partials/placeholders';
+@import 'partials/icons';
 
 html {
   font-size: 62.5%
@@ -18,5 +10,30 @@ html {
 
 body {
   font-size: 16px;
-  background-color: $color-lightest;
+  background-color: #FFF;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+[aria-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  @include flex-center();
+
+  flex-direction: column;
+  //max-width: $layout-max-width;
+  max-width: 1400px;
+  height: 100vh;
 }

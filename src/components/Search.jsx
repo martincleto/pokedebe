@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Autosuggest from 'react-autosuggest'
 import {hashHistory} from 'react-router'
 
-//require('stylesheets/search.scss')
+import styles from 'Stylesheets/search.scss'  // eslint-disable-line no-unused-vars
 
 class Search extends Component {
 
