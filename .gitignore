@@ -7,7 +7,7 @@ yarn-error.log
 
 # Folders
 
-build/
+dist/
 cache/
 coverage/
 node_modules/
