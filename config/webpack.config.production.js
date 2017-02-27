@@ -2,10 +2,17 @@
 
 'use strict';
 
-const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
+const paths = require('../config/paths')
 
 module.exports = {
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: paths.server
+      }
+    ]),
     new webpack.optimize.UglifyJsPlugin({
       debug: true,
       minimize: true,
@@ -13,5 +20,5 @@ module.exports = {
       test: /(\.jsx?)$/
     })
   ],
-  devtool: 'cheap-module-source-map',
+  devtool: 'cheap-module-source-map'
 };
