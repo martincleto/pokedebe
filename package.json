@@ -13,7 +13,7 @@
     "webpack"
   ],
   "scripts": {
-    "clean": "rm -rf public/dist",
+    "clean": "rm -rf dist",
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js -p --progress --colors",
     "lint:js": "eslint --cache -c config/.eslintrc.json --cache-location cache/.eslintcache \"src/**/*.{js,jsx}\"; exit 0",
     "lint:sass": "sass-lint -c config/.sass-lint.yml -v -q",
@@ -21,13 +21,13 @@
     "prebuild": "yarn run clean",
     "prestart": "yarn run clean",
     "pretest": "yarn run clean & yarn run lint",
+    "serve": "yarn run build && node server/server.js",
     "start": "webpack-dev-server",
     "test": "jest --config config/jest.config.json"
   },
   "dependencies": {
-    "babel-eslint": "^7.1.1",
     "babel-polyfill": "^6.23.0",
-    "copy-webpack-plugin": "^4.0.1",
+    "mime-types": "^2.1.14",
     "react": "^15.4.2",
     "react-autosuggest": "^9.0.0",
     "react-dom": "^15.4.2",
@@ -46,6 +46,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
+    "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
     "eslint": "^3.16.0",

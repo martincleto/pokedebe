@@ -15,11 +15,26 @@ or alternatively `$ git clone https://github.com/martincleto/pokedebe.git`
 * Into the folder you have downloaded this repository in your file system, run `$ yarn install`
 * To run the tests, type `$ yarn test`
 
+## Usage
+
+* `$ yarn start` creates a development build and starts a web server at <http://localhost:8080/>
+* `$ yarn run build` generates a production build
+* `$ yarn run serve` starts a basic node server with the actual build files for production at <http://localhost:3000/>
+
 ## TODO List
 
-- [ ] Routing
-- [ ] Search feature
-- [ ] Detail feature
-- [ ] User feature
-- [ ] Bookmark feature
-- [ ] App deployment
+- [ ] Styles
+- [ ] Server
+- [ ] App deployment task
+
+## Nice to have
+
+### UI
+- Better Pokemon detail info including image
+- Save favorite (Core User)
+
+### Core
+- Implement Flux
+- User
+  - Login
+  - Save favorite
