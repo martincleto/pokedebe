@@ -10,7 +10,7 @@
       "wrapperMethod": "getPokemonsList"
     },
     "/detail/:name": {
-      "normalizePattern": "default",
+      "normalizePattern": "",
       "wrapperMethod": "getPokemonByName"
     }
   }

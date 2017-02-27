@@ -7,6 +7,7 @@ import Header from 'Components/Header'
 
 import styles from 'Stylesheets/app.scss'  // eslint-disable-line no-unused-vars
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -19,55 +20,105 @@ class App extends Component {
     this.apiWrapper = new Pokedex(config)
   }
 
-  normalize(data, pattern) {
-    if (typeof data[pattern] !== 'undefined') {
-      return data[pattern]
-    }
+  normalize = (pattern, input) => {
+    let output = input[pattern] ? input[pattern] : input
 
-    return data
+    // return always an object
+    return (output instanceof Array) ? Object.values(output) : output
   }
 
-  componentDidMount() {
-    let childrenProps = this.props.children.props
-    let params = this.props.params
-    let pathName = this.props.location.pathname
-    let routePath = childrenProps.route.path
-    let normalizePattern = pathMap[routePath].normalizePattern
-    let wrapperMethod = pathMap[routePath].wrapperMethod
-    let args = []
-
+  getData = ({location, routePath, params}) => {
     this.setState({
       active: true
     })
 
-    if (localStorage.getItem(pathName)) {
-      this.setState({
-        active: false,
-        data: JSON.parse(localStorage.getItem(pathName))
+    return new Promise((resolve, reject) => {
+      let pathName = location.pathname
+      let normalizePattern = pathMap[routePath].normalizePattern
+
+      // check if stored
+      if (localStorage.getItem(pathName)) {
+        // console.info(`restoring ${pathName}`)
+        let normalizedData = this.normalize(normalizePattern, JSON.parse(localStorage.getItem(pathName)))
+
+        resolve(normalizedData)
+        return
+      }
+
+      let wrapperMethod = pathMap[routePath].wrapperMethod
+      let wrapperMethodArgs = []
+
+      Object.keys(params).forEach(key => {
+        wrapperMethodArgs.push(params[key])
       })
 
-      return
-    }
+      // call the mapped Pokedex method
+      const P = new Pokedex(config)
 
-    Object.keys(params).forEach(key => {
-      args.push(params[key])
+      P[wrapperMethod](...wrapperMethodArgs)
+        .then(response => {
+          let normalizedData = this.normalize(normalizePattern, response)
+
+          localStorage.setItem(pathName, JSON.stringify(normalizedData))
+          // console.info(`resolved ${pathName}`)
+          resolve(normalizedData)
+        })
+        .catch(error => {
+          console.log('There was an ERROR: ', error) // eslint-disable-line no-console
+          reject(error)
+        })
     })
+  }
 
-    // console.log('[resolver]', wrapperMethod)
-    // console.log('[resolver]', args)
+  componentDidMount() {
+    let props = this.props
+    let childrenProps = props.children.props
+    let dataArgs = {
+      location: props.location,
+      params: props.params,
+      routePath: childrenProps.route.path
+    }
+    let dataResult = this.getData(dataArgs)
 
-    // call the mapped Pokedex method
-    this.apiWrapper[wrapperMethod](...args)
+    dataResult
       .then(response => {
         this.setState({
           active: false,
-          data: this.normalize(response, normalizePattern)
+          data: response
         })
-        localStorage.setItem(pathName, JSON.stringify(this.state.data))
       })
       .catch(error => {
-        console.log('There was an ERROR: ', error) // eslint-disable-line no-console
+        console.error(error) // eslint-disable-line no-console
       })
+  }
+
+  componentWillReceiveProps(next) {
+    let current = this.props
+
+    //console.log('current', current)
+    //console.log('next', next)
+
+    if (current.location.pathname !== next.location.pathname) {
+      // @TODO DRY
+      let nextChildrenProps = next.children.props
+      let dataArgs = {
+        location: next.location,
+        params: next.params,
+        routePath: nextChildrenProps.route.path
+      }
+      let dataResult = this.getData(dataArgs)
+
+      dataResult
+        .then(response => {
+          this.setState({
+            active: false,
+            data: response
+          })
+        })
+        .catch(error => {
+          console.error(error) // eslint-disable-line no-console
+        })
+    }
   }
 
   render() {
