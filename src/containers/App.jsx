@@ -138,6 +138,7 @@ class App extends Component {
           {children}
         </main>
         <Footer />
+        <div className="loading" aria-hidden={!this.state.active}>loading...</div>
       </div>
     )
   }

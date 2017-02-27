@@ -9,5 +9,11 @@ exports[`App should render without error 1`] = `
     className="etail"
   />
   <Footer />
+  <div
+    aria-hidden={true}
+    className="loading"
+  >
+    loading...
+  </div>
 </div>
 `;

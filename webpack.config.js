@@ -1,6 +1,7 @@
-'use strict';
+'use strict'
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const path = require('path')
@@ -30,25 +31,7 @@ let baseConfig = {
          exclude: [
            /node_modules/,
            path.join(paths.src, '/**/*.spec.js')
-         ],
-        //  options: {
-        //    plugins: ['transform-runtime'],
-        //    presets: [
-        //      ['es2015', {
-        //        modules: false
-        //      }],
-        //      'react'
-        //    ],
-        //    env: {
-        //      test: {
-        //        plugins: ['transform-es2015-modules-commonjs'],
-        //        presets: [
-        //          'es2015',
-        //          'react'
-        //        ],
-        //      }
-        //    }
-        //  }
+         ]
       },
       {
         test: /\.json$/,
@@ -56,7 +39,7 @@ let baseConfig = {
       },
       {
        test: /\.scss$/,
-       loader: ExtractTextPlugin.extract(`css-loader?sourceMap!postcss-loader!sass-loader?sourceMap&includePaths=${paths.assets}`)
+       loader: ExtractTextPlugin.extract(`css-loader?sourceMap!postcss-loader!sass-loader?sourceMap&includePaths=${paths.sassPartials}&${paths.assets}`)
       },
       {
        test: /\.css$/,
@@ -70,6 +53,16 @@ let baseConfig = {
     tls: 'empty'
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: paths.assets,
+        ignore: [
+          '.DS_Store',
+          'fontawesome*',
+          '*.otf'
+        ]
+      }
+    ]),
     new ExtractTextPlugin({
       filename: 'css/styles.css?[hash]',
       allChunks: true

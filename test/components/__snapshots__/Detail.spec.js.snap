@@ -1,7 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Detail should render without error 1`] = `
-<h1>
-  dragonite
-</h1>
+<div
+  className="detail__inner-wrapper"
+>
+  <header>
+    <h1
+      className="detail_title"
+    >
+      dragonite
+    </h1>
+    <p>
+      Pokedex #
+    </p>
+  </header>
+  <ul
+    className="detail_attributes-list"
+  >
+    <li
+      className="detail_attributes-item"
+    >
+      Weight: 
+      <strong />
+    </li>
+    <li
+      className="detail_attributes-item"
+    >
+      Height: 
+      <strong />
+    </li>
+  </ul>
+</div>
 `;

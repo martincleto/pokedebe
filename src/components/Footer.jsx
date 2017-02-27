@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 
-//require('stylesheets/footer.scss')
+import styles from 'Stylesheets/footer.scss'  // eslint-disable-line no-unused-vars
 
 class Footer extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <p>Made with love by <a href="http://github.com/martincleto" title="martincleto at GitHub">martincleto</a> to Ainara & Enric</p>
+        <p>Made with <span className="icon-love">love</span> by <a href="http://github.com/martincleto" title="martincleto at GitHub">martincleto</a> to Ainara & Enric</p>
       </footer>
     )
   }
