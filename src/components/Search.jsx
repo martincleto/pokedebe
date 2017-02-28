@@ -19,7 +19,7 @@ class Search extends Component {
   getSuggestions(value) {
     const inputValue = value.trim().toLowerCase()
     const inputLength = inputValue.length
-    const data = Object.values(this.props.data)
+    const data = this.props.data.results
 
     return inputLength === 0 ? [] : data.filter(item =>
       item.name.toLowerCase().slice(0, inputLength) === inputValue

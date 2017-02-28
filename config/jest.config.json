@@ -17,9 +17,13 @@
     "Components/Search": "<rootDir>/src/components/Search.jsx",
     "Containers/App": "<rootDir>/src/containers/App.jsx",
     "Core/app": "<rootDir>/src/components/Search.jsx",
-    "Config/api": "<rootDir>/src/config/api.json"
+    "Config/apiMap": "<rootDir>/src/config/api.json",
+    "Services/api": "<rootDir>/src/services/api.js"
   },
-  "setupFiles": ["<rootDir>/test/__mocks__/browserMocks.js"],
+  "setupFiles": [
+    "<rootDir>/test/__polyfills__/fetch.js",
+    "<rootDir>/test/__mocks__/browserMocks.js"
+  ],
   "transform": {
     "^.+\\.(jsx?)$": "<rootDir>/node_modules/babel-jest/build",
     "^.+\\.(css|scss)$": "<rootDir>/scripts/jest-script-preprocessor.js"

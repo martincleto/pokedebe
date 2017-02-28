@@ -16,7 +16,7 @@ describe('App', function() {
   let component
 
   beforeAll(() => {
-    renderer.render(<App location={mockProps.location} />);
+    renderer.render(<App location={mockProps.location} />)
     component = renderer.getRenderOutput()
   })
 

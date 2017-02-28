@@ -9,9 +9,6 @@ const webpack = require('webpack')
 const paths = require('./paths')
 
 module.exports = {
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devtool: 'source-map',
   devServer: {
     contentBase: paths.assets,
@@ -30,5 +27,8 @@ module.exports = {
       aggregateTimeout: 300,
       poll: 1000
     }
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

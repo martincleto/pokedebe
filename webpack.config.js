@@ -15,7 +15,7 @@ let baseConfig = {
   entry: {
     app: './index.js',
     vendor: [
-      'babel-polyfill'
+      'react'
     ]
   },
   output: {
@@ -78,6 +78,7 @@ let baseConfig = {
       Components: path.join(paths.src, 'components'),
       Config: path.join(paths.src, 'config'),
       Containers: path.join(paths.src, 'containers'),
+      Services: path.join(paths.src, 'services'),
       Stylesheets: path.join(paths.src, 'stylesheets')
     },
     extensions: [

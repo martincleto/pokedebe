@@ -1,0 +1,12 @@
+{
+  "/": {
+    "normalizePattern": "results",
+    "endpoint": "pokemon",
+    "query": "limit=100000&offset=0"
+  },
+  "/detail/:name": {
+    "normalizePattern": "",
+    "endpoint": "pokemon",
+    "query": ""
+  }
+}

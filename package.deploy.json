@@ -1,0 +1,10 @@
+{
+  "name": "pokedebe",
+  "version": "1.0.0",
+  "author": "Santiago Martín-Cleto <martincleto@gmail.com>",
+  "main": "index.html",
+  "private": true,
+  "engines": {
+    "node": "6"
+  }
+}
