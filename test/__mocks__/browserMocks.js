@@ -1,3 +1,5 @@
+// Global mocks
+global.fetch = require('jest-fetch-mock');
 
 // Browser feature mocks
 
@@ -20,4 +22,4 @@ Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
 // DOM Mocks
 
-document.body.innerHTML = '<div id="app"></div>'
+document.body.innerHTML = '<div id="app"></div>';

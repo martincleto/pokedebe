@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Pokedex from 'pokedex-promise-v2'
 
-import {config, pathMap} from 'Config/api'
+import apiMap from 'Config/apiMap'
+import {api} from 'Containers/api'
 import Footer from 'Components/Footer'
 import Header from 'Components/Header'
 
@@ -16,8 +16,6 @@ class App extends Component {
       active: false,
       data: {}
     }
-
-    this.apiWrapper = new Pokedex(config)
   }
 
   normalize = (pattern, input) => {
@@ -34,7 +32,7 @@ class App extends Component {
 
     return new Promise((resolve, reject) => {
       let pathName = location.pathname
-      let normalizePattern = pathMap[routePath].normalizePattern
+      let normalizePattern = apiMap[routePath].normalizePattern
 
       // check if stored
       if (localStorage.getItem(pathName)) {
@@ -45,28 +43,30 @@ class App extends Component {
         return
       }
 
-      let wrapperMethod = pathMap[routePath].wrapperMethod
-      let wrapperMethodArgs = []
+      let uri = [apiMap[routePath].endpoint]
+      let query = apiMap[routePath].query
 
       Object.keys(params).forEach(key => {
-        wrapperMethodArgs.push(params[key])
+        uri.push(params[key])
       })
 
-      // call the mapped Pokedex method
-      const P = new Pokedex(config)
+      uri = uri.join('/')
 
-      P[wrapperMethod](...wrapperMethodArgs)
-        .then(response => {
-          let normalizedData = this.normalize(normalizePattern, response)
+      if (query.length) {
+        uri += `?${query}`
+      }
 
-          localStorage.setItem(pathName, JSON.stringify(normalizedData))
-          // console.info(`resolved ${pathName}`)
-          resolve(normalizedData)
-        })
-        .catch(error => {
-          console.log('There was an ERROR: ', error) // eslint-disable-line no-console
-          reject(error)
-        })
+      api.get(uri).then(response => {
+        let normalizedData = this.normalize(normalizePattern, response)
+
+        localStorage.setItem(pathName, JSON.stringify(normalizedData))
+        // console.info(`resolved ${pathName}`)
+        resolve(normalizedData)
+      })
+      .catch(error => {
+        console.log('There was an ERROR: ', error) // eslint-disable-line no-console
+        reject(error)
+      })
     })
   }
 

@@ -19,7 +19,9 @@
     "Core/app": "<rootDir>/src/components/Search.jsx",
     "Config/api": "<rootDir>/src/config/api.json"
   },
-  "setupFiles": ["<rootDir>/test/__mocks__/browserMocks.js"],
+  "setupFiles": [
+    "<rootDir>/test/__mocks__/browserMocks.js"
+  ],
   "transform": {
     "^.+\\.(jsx?)$": "<rootDir>/node_modules/babel-jest/build",
     "^.+\\.(css|scss)$": "<rootDir>/scripts/jest-script-preprocessor.js"

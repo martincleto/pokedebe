@@ -15,7 +15,7 @@ let baseConfig = {
   entry: {
     app: './index.js',
     vendor: [
-      'babel-polyfill'
+      'react'
     ]
   },
   output: {
