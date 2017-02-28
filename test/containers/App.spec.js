@@ -16,9 +16,6 @@ describe('App', function() {
   let component
 
   beforeAll(() => {
-
-    fetch.mockResponse(JSON.stringify([]), {status: 200});
-
     renderer.render(<App location={mockProps.location} />)
     component = renderer.getRenderOutput()
   })

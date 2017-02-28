@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import apiMap from 'Config/apiMap'
-import {api} from 'Containers/api'
+import {api} from 'Services/api'
 import Footer from 'Components/Footer'
 import Header from 'Components/Header'
 
@@ -18,13 +18,6 @@ class App extends Component {
     }
   }
 
-  normalize = (pattern, input) => {
-    let output = input[pattern] ? input[pattern] : input
-
-    // return always an object
-    return (output instanceof Array) ? Object.values(output) : output
-  }
-
   getData = ({location, routePath, params}) => {
     this.setState({
       active: true
@@ -32,14 +25,10 @@ class App extends Component {
 
     return new Promise((resolve, reject) => {
       let pathName = location.pathname
-      let normalizePattern = apiMap[routePath].normalizePattern
 
       // check if stored
       if (localStorage.getItem(pathName)) {
-        // console.info(`restoring ${pathName}`)
-        let normalizedData = this.normalize(normalizePattern, JSON.parse(localStorage.getItem(pathName)))
-
-        resolve(normalizedData)
+        resolve(JSON.parse(localStorage.getItem(pathName)))
         return
       }
 
@@ -57,11 +46,9 @@ class App extends Component {
       }
 
       api.get(uri).then(response => {
-        let normalizedData = this.normalize(normalizePattern, response)
-
-        localStorage.setItem(pathName, JSON.stringify(normalizedData))
+        localStorage.setItem(pathName, JSON.stringify(response))
         // console.info(`resolved ${pathName}`)
-        resolve(normalizedData)
+        resolve(response)
       })
       .catch(error => {
         console.log('There was an ERROR: ', error) // eslint-disable-line no-console

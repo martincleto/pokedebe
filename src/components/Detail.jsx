@@ -25,11 +25,6 @@ class Detail extends Component {
       </div>
     )
   }
-
-  componentDidMount() {
-    // console.info('[Detail] Detail mounted')
-    // console.log('[Detail] data,', this.props.data)
-  }
 }
 
 Detail.propTypes = {
