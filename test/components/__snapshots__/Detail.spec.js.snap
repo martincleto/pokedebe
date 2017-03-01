@@ -6,7 +6,7 @@ exports[`Detail should render without error 1`] = `
 >
   <header>
     <h1
-      className="detail_title"
+      className="detail__title"
     >
       dragonite
     </h1>
@@ -15,20 +15,33 @@ exports[`Detail should render without error 1`] = `
     </p>
   </header>
   <ul
-    className="detail_attributes-list"
+    className="detail__attributes-list"
   >
     <li
-      className="detail_attributes-item"
+      className="detail__attributes-item"
     >
       Weight: 
       <strong />
     </li>
     <li
-      className="detail_attributes-item"
+      className="detail__attributes-item"
     >
       Height: 
       <strong />
     </li>
   </ul>
+  <p
+    className="detail__back-button"
+  >
+    <a
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <i
+        className="icon-back"
+      />
+      Back to Search
+    </a>
+  </p>
 </div>
 `;
