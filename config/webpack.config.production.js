@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         from: path.join(__dirname, '../package.deploy.json'),
-        to: path.build
+        to: path.join(paths.dist, 'package.json')
       }
     ]),
     new webpack.optimize.UglifyJsPlugin({
