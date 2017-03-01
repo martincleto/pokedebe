@@ -9,7 +9,9 @@ exports[`Footer should render without error 1`] = `
     <span
       className="icon-love"
     >
-      love
+      <em>
+        love
+      </em>
     </span>
      by 
     <a
@@ -18,7 +20,7 @@ exports[`Footer should render without error 1`] = `
     >
       martincleto
     </a>
-     to Ainara & Enric
+     to Enric & Ainara
   </p>
 </footer>
 `;

@@ -28,6 +28,11 @@ module.exports = {
       poll: 1000
     }
   },
+  performance: {
+   maxAssetSize: 150,
+   maxEntrypointSize: 250,
+   hints: 'warning'
+ },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]

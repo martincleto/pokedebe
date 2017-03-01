@@ -1,4 +1,4 @@
-# Pokédebe
+# Pokédebe [![Build Status](https://travis-ci.org/martincleto/pokedebe.svg?branch=master)](https://travis-ci.org/martincleto/pokedebe)
 A little React app to search and bookmark Pokémon for my kids (currently WIP).
 
 It uses the great [Pokéapi](https://pokeapi.co/) by [Paul Hallett](http://github.com/phalt) and [Zane Adickes](http://github.com/zaneadix).
