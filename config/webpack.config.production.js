@@ -4,6 +4,8 @@
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
+const path = require('path')
+
 const paths = require('../config/paths')
 
 module.exports = {
@@ -11,6 +13,10 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: paths.server
+      },
+      {
+        from: path.join(__dirname, '../package.deploy.json'),
+        to: path.build
       }
     ]),
     new webpack.optimize.UglifyJsPlugin({
