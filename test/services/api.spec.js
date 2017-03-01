@@ -11,9 +11,6 @@ let mockResponseObj = {
 
 describe('api.js', () => {
 
-  beforeAll(() => {
-  })
-
   it('should have a baseUrl property defined', () => {
     expect(api.baseUrl).toBeDefined()
   })

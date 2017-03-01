@@ -19,7 +19,7 @@ class Detail extends Component {
           <h1 className="detail__title">{this.props.data.name}</h1>
           <p>Pokedex #{this.props.data.id}</p>
         </header>
-        <ul className="detail__titleattributes-list">
+        <ul className="detail__attributes-list">
           <li className="detail__attributes-item">Weight: <strong>{this.props.data.weight}</strong></li>
           <li className="detail__attributes-item">Height: <strong>{this.props.data.height}</strong></li>
         </ul>
