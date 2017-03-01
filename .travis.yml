@@ -14,4 +14,4 @@ branches:
   - master
 
 cache:
-  yarn: true
+  yarn: false
