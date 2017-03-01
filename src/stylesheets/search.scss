@@ -1,4 +1,61 @@
+@import 'vendor/breakpoint';
+@import 'partials/vars';
+@import 'partials/placeholders';
 
 .search {
-  
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint($bp-medium-portrait) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.search-form {
+  position: relative;
+  height: 100%;
+
+  &__button {
+    @extend %reset-button;
+
+    display: block;
+    background: transparent url('/images/pokeball.png') no-repeat center top;
+    background-size: contain;
+    color: $color-white;
+    padding-top: 7rem;
+    margin: 0 auto;
+  }
+}
+
+.react-autosuggest {
+  &__container {
+
+  }
+
+  &__suggestions-container {
+    display: none;
+
+    &--open {
+      position: absolute;
+      top: 32px;
+      display: block;
+      width: 100%;
+      max-height: calc(100% - 32px);
+      background-color: $color-white;
+      padding: 1rem;
+      z-index: index($indexed-elements, menu);
+      overflow-y: auto;
+    }
+  }
+
+  &__suggestions-list {
+    @extend %reset-list;
+
+    color: $color-blue-dark;
+
+    li {
+      line-height: $large-line-height;
+    }
+  }
 }

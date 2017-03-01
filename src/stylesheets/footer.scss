@@ -1,4 +1,26 @@
+@import 'partials/vars';
+@import 'partials/mixins';
+@import 'partials/placeholders';
 
 .footer {
-  
+  @include sticky(bottom);
+
+  font-size: $small-font-size;
+  color: $color-white;
+  line-height: $large-line-height;
+  text-align: center;
+
+  .icon-love {
+    font-size: $medium-font-size;
+    color: $color-red;
+    vertical-align: middle;
+
+    em {
+      @extend %visually-hidden;
+    }
+  }
+
+  a {
+    color: inherit;
+  }
 }

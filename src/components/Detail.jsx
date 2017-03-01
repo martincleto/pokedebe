@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 import styles from 'Stylesheets/detail.scss'  // eslint-disable-line no-unused-vars
 
@@ -15,13 +16,16 @@ class Detail extends Component {
     return (
       <div className="detail__inner-wrapper">
         <header>
-          <h1 className="detail_title">{this.props.data.name}</h1>
+          <h1 className="detail__title">{this.props.data.name}</h1>
           <p>Pokedex #{this.props.data.id}</p>
         </header>
-        <ul className="detail_attributes-list">
-          <li className="detail_attributes-item">Weight: <strong>{this.props.data.weight}</strong></li>
-          <li className="detail_attributes-item">Height: <strong>{this.props.data.height}</strong></li>
+        <ul className="detail__titleattributes-list">
+          <li className="detail__attributes-item">Weight: <strong>{this.props.data.weight}</strong></li>
+          <li className="detail__attributes-item">Height: <strong>{this.props.data.height}</strong></li>
         </ul>
+        <p className="detail__back-button">
+          <Link to="/"><i className="icon-back"></i>Back to Search</Link>
+        </p>
       </div>
     )
   }
