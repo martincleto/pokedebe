@@ -17,7 +17,7 @@
     "Components/Search": "<rootDir>/src/components/Search.jsx",
     "Containers/App": "<rootDir>/src/containers/App.jsx",
     "Core/app": "<rootDir>/src/components/Search.jsx",
-    "Config/apiMap": "<rootDir>/src/config/apiMap.json",
+    "Config/apiMap": "<rootDir>/src/config/api.json",
     "Services/api": "<rootDir>/src/services/api.js"
   },
   "setupFiles": [
