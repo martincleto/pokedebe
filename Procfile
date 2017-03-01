@@ -1,1 +1,1 @@
-web: node server.js localhost 80
+web: node dist/server.js

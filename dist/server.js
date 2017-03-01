@@ -8,7 +8,7 @@ const {buildPath, changeDir, log, reqHandler} = require('./server-utils')
 
 // host and port can be passed as arguments - e.g. node server/server.js mylocal 9000
 const host = process.argv[2] || 'localhost'
-const port = process.argv[3] || 8081
+const port = process.env.PORT || 8081
 
 changeDir(buildPath)
 
