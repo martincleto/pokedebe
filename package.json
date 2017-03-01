@@ -23,7 +23,7 @@
     "pretest": "yarn run clean & yarn run lint",
     "start": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js -p && node server/server.js",
     "dev": "webpack-dev-server",
-    "test": "jest --config config/jest.config.json"
+    "test": "jest --config config/jest.config.json -u --no-cache"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",

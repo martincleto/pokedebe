@@ -15,7 +15,7 @@ exports[`Detail should render without error 1`] = `
     </p>
   </header>
   <ul
-    className="detail__titleattributes-list"
+    className="detail__attributes-list"
   >
     <li
       className="detail__attributes-item"
