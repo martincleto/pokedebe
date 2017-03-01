@@ -25,7 +25,7 @@ $heading-font-stack: 'Pokemon', Tahoma, Geneva, serif;
 $base-default-font-size: 16px;
 $base-medium-font-size: 22px;
 
-$small-font-size: .8rem;
+$small-font-size: 1.1rem;
 $medium-font-size: 1.5rem;
 $large-font-size: 2.5rem;
 $xl-font-size: 4rem;
@@ -40,7 +40,7 @@ $layout-max-width: $bp-large;
 // $elements determine an ordered group of elements from lowest to highest
 // to be consumed by index() SASS function
 // @see http://sass-lang.com/documentation/Sass/Script/Functions.html#index-instance_method
-$indexed-elements: sticky, modal, navigation;
+$indexed-elements: sticky, menu, modal, navigation;
 $zindex-reset: -1;
 
 // ==================== Colors =====================  //
@@ -60,4 +60,4 @@ $color-yellow: #FFCB05;
 
 // ================= Other default =================  //
 
-$default-border-radius: 6px;
+$default-border-radius: 3px;

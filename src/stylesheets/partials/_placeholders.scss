@@ -5,25 +5,13 @@
   line-height: $default-line-height;
 }
 
-%button {
-  background-color: $color-accent;
-  color: $color-tertiary;
+%reset-button {
+  background-color: transparent;
+  color: $color-white;
   font-family: $base-font-stack;
-  text-shadow: 1px 1px 0 darken($color-accent, 15%);
-  line-height: $large-line-height;
-  padding: 0 1.6rem;
-  border-radius: $default-border-radius;
   border: 0;
   outline: none;
   cursor: pointer;
-  opacity: 1;
-  transition: all .3s ease-in;
-
-  &:active,
-  &:hover,
-  &:focus {
-    background-color: darken($color-accent, 14%);
-  }
 
   &[disabled] {
     opacity: .6;
@@ -72,4 +60,9 @@
   &:focus {
     color: darken($color-accent, 40%);
   }
+}
+
+%visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
 }

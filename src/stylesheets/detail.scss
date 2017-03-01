@@ -1,4 +1,38 @@
+@import 'vendor/breakpoint';
+@import 'partials/vars';
+@import 'partials/mixins';
+@import 'partials/placeholders';
+@import 'partials/icons';
 
 .detail {
 
+  @include breakpoint($bp-medium-portrait) {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: $color-blue-dark;
+    margin-top: 0;
+  }
+
+  &__inner-wrapper {
+    background-color: $color-white;
+    padding: 2rem;
+    border-radius: $default-border-radius;
+    box-shadow: 2px 2px 2px $color-blue-dark;
+  }
+
+  &__back-button {
+    margin-top: 3rem;
+    
+    a {
+      text-decoration: none;
+    }
+
+    .icon-back {
+      font-size: 1.25rem;
+      margin-right: .5rem;
+    }
+  }
 }
