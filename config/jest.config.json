@@ -21,7 +21,6 @@
     "Services/api": "<rootDir>/src/services/api.js"
   },
   "setupFiles": [
-    "<rootDir>/test/__polyfills__/fetch.js",
     "<rootDir>/test/__mocks__/browserMocks.js"
   ],
   "transform": {
