@@ -17,11 +17,10 @@
     "Components/Search": "<rootDir>/src/components/Search.jsx",
     "Containers/App": "<rootDir>/src/containers/App.jsx",
     "Core/app": "<rootDir>/src/components/Search.jsx",
-    "Config/apiMap": "<rootDir>/src/config/api.json",
+    "Config/apiMap": "<rootDir>/src/config/apiMap.json",
     "Services/api": "<rootDir>/src/services/api.js"
   },
   "setupFiles": [
-    "<rootDir>/test/__polyfills__/fetch.js",
     "<rootDir>/test/__mocks__/browserMocks.js"
   ],
   "transform": {

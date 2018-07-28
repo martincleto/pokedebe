@@ -1,7 +1,7 @@
 
 class Api {
   constructor() {
-    this.baseUrl = 'http://pokeapi.co/api/v2/'
+    this.baseUrl = 'https://pokeapi.co/api/v2/'
   }
 
   status(response) {

@@ -47,7 +47,6 @@ class App extends Component {
 
       api.get(uri).then(response => {
         localStorage.setItem(pathName, JSON.stringify(response))
-        // console.info(`resolved ${pathName}`)
         resolve(response)
       })
       .catch(error => {
@@ -81,9 +80,6 @@ class App extends Component {
 
   componentWillReceiveProps(next) {
     let current = this.props
-
-    //console.log('current', current)
-    //console.log('next', next)
 
     if (current.location.pathname !== next.location.pathname) {
       // @TODO DRY

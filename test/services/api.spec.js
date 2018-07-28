@@ -1,8 +1,8 @@
-jest.unmock('Services/api')
+jest.unmock('../../src/services/api.js')
 
 const fetchMock = require('fetch-mock')
 
-import {api} from 'Services/api'
+import {api} from '../../src/services/api.js'
 
 let mockResponseObj = {
   id: 1,
@@ -10,9 +10,6 @@ let mockResponseObj = {
 }
 
 describe('api.js', () => {
-
-  beforeAll(() => {
-  })
 
   it('should have a baseUrl property defined', () => {
     expect(api.baseUrl).toBeDefined()
