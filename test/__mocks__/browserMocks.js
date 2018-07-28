@@ -1,3 +1,5 @@
+// Fetch
+global.fetch = require('jest-fetch-mock');
 
 // Browser feature mocks
 
